@@ -8,5 +8,5 @@ module.exports = defineConfig({
         }
     }
   },
-  publicPath: '/VTB-project/'
+  publicPath: '/vtb-project/'
 })
