@@ -23,6 +23,9 @@ export default {
         display: flex;
         align-items: center;
         overflow: hidden;   
+        @media (max-width: 767px) {
+            height: 52px;
+        }
     }
 
     .marquee {
@@ -37,9 +40,12 @@ export default {
         white-space: nowrap;
         display: inline-block;
         padding-left: 100%;
-        -webkit-animation: scroll 5s infinite linear;
-        -moz-animation: scroll 5s infinite linear;
-        animation: scroll 5s infinite linear;
+        -webkit-animation: scroll 8s infinite linear;
+        -moz-animation: scroll 8s infinite linear;
+        animation: scroll 8s infinite linear;
+        @media (max-width: 767px) {
+            font-size: 18px;
+        }
     }
         @-webkit-keyframes scroll {
         0% {

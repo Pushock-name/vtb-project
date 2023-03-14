@@ -48,5 +48,6 @@
         font-weight: 400;
         font-size: 18px;
         line-height: 140%;
+        overflow: hidden;
     }
 </style>

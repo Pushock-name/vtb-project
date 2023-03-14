@@ -2,6 +2,7 @@
     <div class="v-welcome">
         <div class="container">
             <div class="welcome">
+                <div class="train"><img src="../../assets/images/Train.png" alt="train"></div>
                 <div class="welcome-content">
                     <div>
                         <h2>Необычные идеи<br>
@@ -63,9 +64,14 @@ export default {
 </script>
 
 <style lang="scss">
+
     .v-welcome {
         position: relative;
         padding-top: 117px;
+        @media (max-width: 767px) {
+            background-color: #191919;
+            background-image: url(../../assets/images/background.png);
+        }
     }
 
     .welcome {
@@ -75,6 +81,32 @@ export default {
         border: 40px solid #000000;
         border-radius: 40px;
         background-image: url(../../assets/images/background.png);
+        @media (max-width: 767px) {
+            margin-bottom: 0px;
+            padding-bottom: 14px;
+            border: none;
+        }
+    }
+
+    .train {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        z-index: 1;
+        @media (max-width: 1200px) {
+            width: 37%;
+            height: 37%;
+        }
+        @media (max-width: 992px) {
+            width: 35%;
+            height: 35%;
+            top: 330px;
+        }
+        @media (max-width: 767px) {
+            width: 40%;
+            height: 42%;
+            top: 25px;
+        }
     }
 
     .welcome-content {
@@ -85,6 +117,16 @@ export default {
         justify-content: flex-start;
         gap: 32px;
         padding-bottom: 25px;
+        @media (max-width: 767px) {
+            margin-top: 0px;
+            margin-left: 0px;
+        }
+    }
+
+    .welcome-content h2 {
+        @media (max-width: 767px) {
+            font-size: 28px;
+        }
     }
 
     .welcome-content__form {
@@ -120,6 +162,10 @@ export default {
         text-transform: uppercase;
         color: #FFFFFF;
         text-align: center;
+        @media (max-width: 767px) {
+            width: 157px;
+            height: 48px;
+        }
     }
 
     .delim {
@@ -130,6 +176,10 @@ export default {
         font-size: 27px;
         line-height: 250%;
         color:  #FFFFFF;
+        @media (max-width: 767px) {
+            width: 22px;
+            height: 48px;
+        }
     }
 
     .minute__block {
@@ -150,7 +200,10 @@ export default {
         text-transform: uppercase;
         color: #FFFFFF;
         text-align: center;
-
+        @media (max-width: 767px) {
+            width: 157px;
+            height: 48px;
+        }
     }
 
     .station__block {
@@ -171,6 +224,10 @@ export default {
         text-transform: uppercase;
         color: #FFFFFF;
         text-align: center;
+        @media (max-width: 767px) {
+            width: 343px;
+            height: 48px;
+        }
     }
 
     .welcome-content__form label {
@@ -195,14 +252,6 @@ export default {
         color: #000000;
     }
 
-    .welcome-content::after {
-        content: url(../../assets/images/Train.png);
-        position: absolute;
-        right: 0px;
-        top: 0px;
-        z-index: 1;
-    }
-
     .welcome-content::before {
         content: url(../../assets/images/Vector.png);
         position: absolute;
@@ -211,6 +260,9 @@ export default {
         background: rgba(56, 128, 247, 0.6);
         mix-blend-mode: overlay;
         filter: blur(42px);
+        @media (max-width: 992px) {
+            top: 180px;
+        }
     }
 
     .welcome::before {
@@ -219,6 +271,9 @@ export default {
         left: 140px;
         top: -160px;
         transform: matrix(1, 0, 0, -1, 0, 0);
+        @media (max-width: 767px) {
+            display: none;
+        }
 }
 
     .welcome::after {
@@ -227,5 +282,8 @@ export default {
         right: 140px;
         top: -160px;
         transform: matrix(1, 0, 0, -1, 0, 0);
+        @media (max-width: 767px) {
+            display: none;
+        }
     }
 </style>

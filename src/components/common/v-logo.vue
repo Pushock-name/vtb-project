@@ -26,6 +26,10 @@ export default {
     justify-content: space-between;
     align-items: center;
     gap: 10px;
+    @media (max-width: 767px) {
+            width: 60%;
+            height: 60%;
+    }
 }
 
 .divider {

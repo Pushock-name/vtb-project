@@ -27,7 +27,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 @font-face {
@@ -107,7 +107,17 @@ legend {
 
 .container {
   max-width: 1240px;
-  margin: 0 auto;
+  margin: 0px auto;
+  @media (max-width: 1200px) {
+    max-width: 970px;
+  }
+  @media (max-width: 992px) {
+    max-width: 750px;
+  }
+  @media (max-width: 767px) {
+    max-width: 375px;
+    padding: 0 15px;
+  }
 }
 
 h2 {
@@ -118,6 +128,15 @@ h2 {
   line-height: 130%;
   color: #368CFF;
   text-transform: uppercase;
+  @media (max-width: 1200px) {
+    font-size: 40px;
+  }
+  @media (max-width: 992px) {
+    font-size: 36px;
+  }
+  @media (max-width: 767px) {
+    font-size: 22px;
+  }
 }
 
 h3 {
@@ -127,6 +146,9 @@ h3 {
   font-size: 24px;
   line-height: 140%;
   color: #FFFFFF;
+  @media (max-width: 767px) {
+    font-size: 18px;
+  }
 }
 
 p {
@@ -136,5 +158,11 @@ p {
   font-size: 18px;
   line-height: 140%;
   color: #FFFFFF;
+}
+
+@media (max-width: 767px) {
+  br {
+  display: none;
+  }
 }
 </style>

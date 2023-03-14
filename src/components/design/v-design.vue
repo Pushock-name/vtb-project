@@ -75,13 +75,28 @@ export default {
 
     .design {
         padding-top: 120px;
+        padding-bottom: 120px;
         position: relative;
+        @media (max-width: 767px) {
+            padding-top: 68px;
+            padding-bottom: 80px;
+        }
+
+    }
+
+    .design h2 {
+        @media (max-width: 767px) {
+            text-align: center;
+        }
 
     }
 
     .design__description {
         margin-top: 24px;
         margin-bottom: 40px;
+        @media (max-width: 767px) {
+            text-align: center;
+        }
     }
 
     .design__items {
@@ -89,6 +104,10 @@ export default {
         flex-direction: row;
         justify-content: space-between;
         flex-wrap: wrap;
+        @media (max-width: 767px) {
+            gap: 8px;
+            margin-top: 224px;
+        }
     }
 
     .design__items span {
@@ -102,10 +121,22 @@ export default {
         text-transform: uppercase;
         margin-left: 10px;
         margin-top: 20px;
+        @media (max-width: 992px) {
+            font-size: 24px;
+        }
     }
 
     .design__items p {
         margin-left: 10px;
+        @media (max-width: 1200px) {
+            font-size: 16px;
+        }
+        @media (max-width: 992px) {
+            font-size: 13px;
+        }
+        @media (max-width: 767px) {
+            font-size: 16px;
+        }
     }
 
     .design__item {
@@ -114,12 +145,41 @@ export default {
         background: rgba(0, 0, 0, 0.2);
         backdrop-filter: blur(25px);
         border-radius: 8px;
+        @media (max-width: 1200px) {
+            width: 315px;
+        }
+        @media (max-width: 992px) {
+            width: 245px;
+            height: 150px;
+        }
+        @media (max-width: 767px) {
+            width: 343px;
+            height: 127px;
+            padding-right: 30px;
+            padding-bottom: 10px;
+        }
     }
 
     .envelope {
         position: absolute;
         top: 55px;
         right: 0px;
+        @media (max-width: 1200px) {
+            width: 35%;
+            height: 35%;
+            top: 80px;
+        }
+        @media (max-width: 992px) {
+            width: 32%;
+            height: 32%;
+            top: 140px;
+        }
+        @media (max-width: 767px) {
+            top: 200px;
+            right: 40px;
+            width: 80%;
+            height: 80%;
+        }
     }
 
     .envelope::after {
@@ -128,6 +188,15 @@ export default {
         top: -4px;
         left: 0px;
         z-index: 1;
+        @media (max-width: 1200px) {
+            visibility: hidden;
+        }
+        @media (max-width: 992px) {
+            visibility: hidden;
+        }
+        @media (max-width: 767px) {
+            visibility: hidden;
+        }
     }
 
     .design__card-issue__btn {
@@ -157,7 +226,6 @@ export default {
         /* or 20px */
         color: #FFFFFF;
         opacity: 0.5;
-        padding-bottom: 120px;
     }
 
     .design__item__link {

@@ -36,6 +36,9 @@ export default {
         top: 0;
         left: 0;
         z-index: 100;
+        @media (max-width: 767px) {
+            height: 54px;
+        }
     }
 
     .v-header {
@@ -45,5 +48,8 @@ export default {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        @media (max-width: 767px) {
+            height: 54px;
+        }
     }
 </style>

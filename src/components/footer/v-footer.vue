@@ -39,7 +39,10 @@ export default {
     .v-footer {
         background-color: #000000;
         height: 111px;
-    }
+        @media (max-width: 767px) {
+            height: 156px;
+        }
+    }    
 
     .footer {
         display: flex;
@@ -47,6 +50,13 @@ export default {
         justify-content: space-between;
         align-items: center;
         height: 111px;
+        @media (max-width: 767px) {
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-direction: column-reverse;
+            padding-top: 40px;
+        }
     }
 
     .footer__nav__link {
