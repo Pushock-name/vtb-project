@@ -4,7 +4,7 @@
         <v-welcome />
         <v-animation />
         <v-card />
-        <v-design />
+        <v-offer />
         <v-footer />
     </div>
 </template>
@@ -14,7 +14,7 @@
     import vWelcome from './welcome/v-welcome.vue';
     import vAnimation from './animation/v-animation.vue';
     import vCard from './card/v-card.vue';
-    import vDesign from './design/v-design.vue'
+    import vOffer from './offer/v-offer.vue'
     import vFooter from './footer/v-footer.vue';
 
     
@@ -25,7 +25,7 @@
             vWelcome,
             vAnimation,
             vCard,
-            vDesign,
+            vOffer,
             vFooter
         },
         props: {},

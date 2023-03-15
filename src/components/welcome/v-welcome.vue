@@ -2,7 +2,7 @@
     <div class="v-welcome">
         <div class="container">
             <div class="welcome">
-                <div class="train"><img src="../../assets/images/Train.png" alt="train"></div>
+                <div class="train"><img src="../../assets/images/train.png" alt="train"></div>
                 <div class="welcome-content">
                     <div>
                         <h2>Необычные идеи<br>
@@ -16,17 +16,17 @@
                             <div class="form__time__block">
                                 <div class="hour__block">
                                     <label>Час</label>
-                                    <input @focus="insertMinuteMetrika" class="hour" type="number" form="data" value="00">
+                                    <input @focus="insertMinuteMetrika" class="hour" type="number" form="data" placeholder="00">
                                 </div>
                                 <div class="delim">:</div>
                                 <div class="minute__block">
                                     <label>Минута</label>
-                                    <input @focus="insertHourMetrika" class="minute" type="number" form="data" value="00">
+                                    <input @focus="insertHourMetrika" class="minute" type="number" form="data" placeholder="00">
                                 </div>
                             </div>
                             <div class="station__block">
                                 <label>Станция прибытия</label>    
-                                <input @focus="insertStationMetrika" class="station" type="text" form="data" value="Ваша станция">
+                                <input @focus="insertStationMetrika" class="station" type="text" form="data" placeholder="Ваша станция">
                             </div>
                         </form>    
                         <button @click="poehaloMetrika" type="submit" form="data" class="submit__btn">Поехали!</button> 
@@ -230,6 +230,11 @@ export default {
         }
     }
 
+    .station::placeholder, .hour::placeholder, .minute::placeholder { 
+    color: #FFFFFF;
+    opacity: 1; 
+    }
+
     .welcome-content__form label {
         font-family: 'YS Text';
         font-style: normal;
@@ -250,19 +255,6 @@ export default {
         font-size: 18px;
         line-height: 30px;
         color: #000000;
-    }
-
-    .welcome-content::before {
-        content: url(../../assets/images/Vector.png);
-        position: absolute;
-        right: 0px;
-        top: 0px;
-        background: rgba(56, 128, 247, 0.6);
-        mix-blend-mode: overlay;
-        filter: blur(42px);
-        @media (max-width: 992px) {
-            top: 180px;
-        }
     }
 
     .welcome::before {

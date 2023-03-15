@@ -28,7 +28,7 @@ export default {
 </script>
 <style lang="scss">
     .v-header_screen {
-        width: 100%;
+        width: 100%; 
         height: 74px;
         background: rgba(0, 0, 0, 0.2);
         backdrop-filter: blur(25px);

@@ -14,8 +14,8 @@
                         </div>
                         <div class="card__image__mobile"><img src="../../assets/images/cardmobile.png" alt=""></div>
                         <div class="card__items">
-                            <div class="card__item"><span>-</span><p><a href="!#" class="card__item__link">Кешбэк*</a> до 30% за покупки у партнёров банка</p></div>
-                            <div class="card__item"><span>-</span><p>Кешбэк 2% в самых популярных категориях:<br>
+                            <div class="card__item"><span>-</span><p><a href="#" class="card__item__link">Кешбэк*</a> до 30% за покупки у партнёров банка</p></div>
+                            <div class="card__item"><span>-</span><p><a href="#" class="card__item__link">Кешбэк 2%*</a> в самых популярных категориях:<br>
                                 транспорт, супермаркеты и рестораны</p></div>
                             <div class="card__item"><span>-</span><p>Возможность переводить накопленный кешбэк в рубли,<br>
                                 тратить на путешествия или другие товары в программе<br>
@@ -149,10 +149,6 @@ export default {
         text-transform: uppercase;
         color: #FFFFFF;
         text-shadow: 0px 0px 4px rgba(31, 107, 255, 0.35);
-    }
-
-    .card__item__link {
-        text-decoration: underline;
     }
 
     .card__image::before {

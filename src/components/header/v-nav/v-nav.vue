@@ -2,10 +2,10 @@
     <div class="v-nav">
         <div class="nav-desktop">
             <div class="header__nav__link">
-                <a href="!#">Пожелания по расписанию</a>
+                <a href="!#">Идеи для поездок</a>
             </div>
             <div class="header__nav__link">
-                <a href="!#">О Мультикарте</a>
+                <a href="!#">Решения от ВТБ</a>
             </div>
             <div class="header__nav__link">
                 <a href="!#">Мультибонусы</a>

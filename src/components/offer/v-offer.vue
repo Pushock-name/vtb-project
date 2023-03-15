@@ -1,32 +1,32 @@
 <template lang="">
-    <div class="v-design">
+    <div class="v-offer">
         <div class="container">
-            <div class="design">
+            <div class="offer">
                 <h2>Оформите карту<br>
                 всего за 3 шага</h2>
-                <h3 class="design__description">Чтобы каждый день получать выгоду:</h3>
+                <h3 class="offer__description">Чтобы каждый день получать выгоду:</h3>
                 <div class="envelope"><img src="../../assets/images/envelope.png" alt=""></div>
-                <div class="design__items">
-                    <div class="design__item">
+                <div class="offer__items">
+                    <div class="offer__item">
                         <span>1</span>
-                        <p>Заполните <a class="design__item__link" href="https://online.vtb.ru/debit-card/step1/multicard-ready">онлайн-заявку</a> —<br>
+                        <p>Заполните <a class="offer__item__link" href="https://online.vtb.ru/debit-card/step1/multicard-ready">онлайн-заявку</a> —<br>
                         это займёт не больше минуты.</p>
                     </div>
-                    <div class="design__item">
+                    <div class="offer__item">
                         <span>2</span>
                         <p>Выберите способ получения:<br> 
                         самостоятельно в отделении ВТБ<br>
                         или бесплатно курьером.</p>
                     </div>
-                    <div class="design__item design__item3">
+                    <div class="offer__item offer__item3">
                         <span>3</span>
                         <p>Подключите программу лояльности<br>
                         «Мультибонус» и получайте кешбэк<br>
                         от покупок.</p>
                     </div>
                 </div>
-                <a @click="cardIssueMetrika" href="https://www.vtb.promo/daily?code=media_rasp_yandex_dbdk&utm_source=rasp_yandex&utm_medium=media&utm_campaign=media_dbdk_rasp_yandex_link_button_issue_card_cpc_rf_p1_feb_apr"><div class="design__card-issue__btn">Оформить</div></a>
-                <div class="design__card-issue__description">
+                <a @click="cardIssueMetrika" href="https://www.vtb.promo/daily?code=media_rasp_yandex_dbdk&utm_source=rasp_yandex&utm_medium=media&utm_campaign=media_dbdk_rasp_yandex_link_button_issue_card_cpc_rf_p1_feb_apr"><div class="offer__card-issue__btn">Оформить</div></a>
+                <div class="offer__card-issue__description">
                     Выпуск и обслуживание дебетовой карты — 0 ₽. 
                     Кешбэк – возврат части стоимости покупки в виде мультибонусов 
                     на бонусный счет участника программы лояльности «Мультибонус». 
@@ -51,7 +51,7 @@
 
 <script>
 export default {
-    name: 'v-app-wrapper',
+    name: 'v-offer',
         components: {},
         props: {},
         data () {
@@ -68,12 +68,12 @@ export default {
 </script>
 
 <style lang="scss">
-    .v-design {
+    .v-offer {
         background: #191919;
         background-image: url(../../assets/images/background.png);
     }
 
-    .design {
+    .offer {
         padding-top: 120px;
         padding-bottom: 120px;
         position: relative;
@@ -84,14 +84,14 @@ export default {
 
     }
 
-    .design h2 {
+    .offer h2 {
         @media (max-width: 767px) {
             text-align: center;
         }
 
     }
 
-    .design__description {
+    .offer__description {
         margin-top: 24px;
         margin-bottom: 40px;
         @media (max-width: 767px) {
@@ -99,7 +99,7 @@ export default {
         }
     }
 
-    .design__items {
+    .offer__items {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -110,7 +110,7 @@ export default {
         }
     }
 
-    .design__items span {
+    .offer__items span {
         display: inline-block;
         font-family: 'Press Start 2P';
         font-style: normal;
@@ -126,7 +126,7 @@ export default {
         }
     }
 
-    .design__items p {
+    .offer__items p {
         margin-left: 10px;
         @media (max-width: 1200px) {
             font-size: 16px;
@@ -139,7 +139,7 @@ export default {
         }
     }
 
-    .design__item {
+    .offer__item {
         width: 399px;
         height: 165px;
         background: rgba(0, 0, 0, 0.2);
@@ -199,7 +199,7 @@ export default {
         }
     }
 
-    .design__card-issue__btn {
+    .offer__card-issue__btn {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -217,7 +217,7 @@ export default {
         margin-top: 40px;
     }
 
-    .design__card-issue__description {
+    .offer__card-issue__description {
         font-family: 'YS Text';
         font-style: normal;
         font-weight: 400;
@@ -228,7 +228,7 @@ export default {
         opacity: 0.5;
     }
 
-    .design__item__link {
+    .offer__item__link {
         text-decoration: underline;
     }
 
