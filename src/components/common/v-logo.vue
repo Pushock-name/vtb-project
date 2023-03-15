@@ -20,15 +20,15 @@ export default {
 </script>
 
 <style lang="scss">
-    .v-logo {
+.v-logo {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     gap: 10px;
     @media (max-width: 767px) {
-            width: 60%;
-            height: 60%;
+            width: 70%;
+            height: 70%;
     }
 }
 

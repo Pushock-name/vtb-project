@@ -1,12 +1,15 @@
 <template lang="">
     <div class="v-welcome">
         <div class="container">
+            <div class="v-logo-container">
+                <v-logo class="welcome__logo"/>
+            </div>
             <div class="welcome">
                 <div class="train"><img src="../../assets/images/train.png" alt="train"></div>
                 <div class="welcome-content">
                     <div>
-                        <h2>Необычные идеи<br>
-                        для поездок</h2>
+                        <h1>Необычные идеи<br>
+                        для поездок</h1>
                     </div>
                     <div><h3>Введите время отправления, укажите станцию<br> 
                         прибытия, а мы подскажем, как сделать<br> 
@@ -37,9 +40,13 @@
 </template>
 
 <script>
+import vLogo from '../common/v-logo.vue'
+
 export default {
     name: 'v-welcome',
-        components: {},
+        components: {
+            vLogo
+        },
         props: {},
         data () {
             return {}        
@@ -67,10 +74,32 @@ export default {
 
     .v-welcome {
         position: relative;
-        padding-top: 117px;
+        padding-top: 30px;
         @media (max-width: 767px) {
             background-color: #191919;
             background-image: url(../../assets/images/background.png);
+            padding-top: 32px;
+        }
+    }
+
+    .v-logo-container {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: center;
+        @media (max-width: 767px) {
+            justify-content: flex-start;
+        }
+    }
+
+    .welcome__logo {
+        background: #000000;
+        border-radius: 20px 20px 0px 0px;
+        padding: 20px 30px 0px 30px;
+        @media (max-width: 767px) {
+        background: none;
+        border-radius: 0;
+        padding: 0;
         }
     }
 
@@ -82,6 +111,7 @@ export default {
         border-radius: 40px;
         background-image: url(../../assets/images/background.png);
         @media (max-width: 767px) {
+            margin-top: 63px;
             margin-bottom: 0px;
             padding-bottom: 14px;
             border: none;
@@ -91,8 +121,10 @@ export default {
     .train {
         position: absolute;
         right: 0px;
-        top: 0px;
+        top: -20px;
         z-index: 1;
+        width: 40%;
+        height: 40%;
         @media (max-width: 1200px) {
             width: 37%;
             height: 37%;
@@ -100,7 +132,7 @@ export default {
         @media (max-width: 992px) {
             width: 35%;
             height: 35%;
-            top: 330px;
+            top: 270px;
         }
         @media (max-width: 767px) {
             width: 40%;
@@ -110,13 +142,13 @@ export default {
     }
 
     .welcome-content {
-        margin-top: 59px;
+        margin-top: 41px;
         margin-left: 36px;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         gap: 32px;
-        padding-bottom: 25px;
+        padding-bottom: 43px;
         @media (max-width: 767px) {
             margin-top: 0px;
             margin-left: 0px;
@@ -177,7 +209,7 @@ export default {
         line-height: 250%;
         color:  #FFFFFF;
         @media (max-width: 767px) {
-            width: 22px;
+            width: 26px;
             height: 48px;
         }
     }
@@ -263,6 +295,9 @@ export default {
         left: 140px;
         top: -160px;
         transform: matrix(1, 0, 0, -1, 0, 0);
+        @media (max-width: 992px) {
+            display: none;
+        }
         @media (max-width: 767px) {
             display: none;
         }
@@ -274,6 +309,9 @@ export default {
         right: 140px;
         top: -160px;
         transform: matrix(1, 0, 0, -1, 0, 0);
+        @media (max-width: 992px) {
+            display: none;
+        }
         @media (max-width: 767px) {
             display: none;
         }

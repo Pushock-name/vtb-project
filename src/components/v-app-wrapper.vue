@@ -1,6 +1,5 @@
 <template>
     <div class="v-app-wrapper">
-        <v-header />
         <v-welcome />
         <v-animation />
         <v-card />
@@ -10,18 +9,15 @@
 </template>
 
 <script>
-    import vHeader from './header/v-header.vue';
     import vWelcome from './welcome/v-welcome.vue';
     import vAnimation from './animation/v-animation.vue';
     import vCard from './card/v-card.vue';
     import vOffer from './offer/v-offer.vue'
     import vFooter from './footer/v-footer.vue';
 
-    
     export default {
         name: 'v-app-wrapper',
         components: {
-            vHeader,
             vWelcome,
             vAnimation,
             vCard,

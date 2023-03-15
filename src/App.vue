@@ -122,8 +122,23 @@ legend {
 
 h2 {
   font-family: 'Press Start 2P';
-  font-style: normal;
-  font-weight: 400;
+  font-size: 52px;
+  line-height: 130%;
+  color: #368CFF;
+  text-transform: uppercase;
+  @media (max-width: 1200px) {
+    font-size: 40px;
+  }
+  @media (max-width: 992px) {
+    font-size: 36px;
+  }
+  @media (max-width: 767px) {
+    font-size: 22px;
+  }
+}
+
+h1 {
+  font-family: 'Press Start 2P';
   font-size: 52px;
   line-height: 130%;
   color: #368CFF;

@@ -191,12 +191,6 @@ export default {
         @media (max-width: 1200px) {
             visibility: hidden;
         }
-        @media (max-width: 992px) {
-            visibility: hidden;
-        }
-        @media (max-width: 767px) {
-            visibility: hidden;
-        }
     }
 
     .offer__card-issue__btn {
