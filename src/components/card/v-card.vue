@@ -10,7 +10,7 @@
                         </div>
                         <div>
                             <h3>Карта ВТБ подойдёт для любых трат, будь то покупка<br> 
-                                билетов на электричку или любимого кофе</h3>
+                                билетов на электричку или любимого завтра кофе</h3>
                         </div>
                         <div class="card__image__mobile"><img src="../../assets/images/cardmobile.png" alt=""></div>
                         <div class="card__items">

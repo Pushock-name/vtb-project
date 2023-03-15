@@ -11,28 +11,28 @@
                         <h1>Необычные идеи<br>
                         для поездок</h1>
                     </div>
-                    <div><h3>Введите время отправления, укажите станцию<br> 
-                        прибытия, а мы подскажем, как сделать<br> 
-                        привычный путь чуточку веселее.</h3>
+                    <div><h3>Введите время отправления и укажите станцию<br> 
+                        прибытия. Мы подскажем, как сделать<br> 
+                        привычный путь веселее.</h3>
                     </div>
                         <form class="welcome-content__form" id="data">
                             <div class="form__time__block">
                                 <div class="hour__block">
                                     <label>Час</label>
-                                    <input @focus="insertMinuteMetrika" class="hour" type="number" form="data" placeholder="00">
+                                    <input v-model="hour" @focus="insertMinuteMetrika" maxlength="2" class="hour" type="number" form="data" placeholder="00">
                                 </div>
                                 <div class="delim">:</div>
                                 <div class="minute__block">
                                     <label>Минута</label>
-                                    <input @focus="insertHourMetrika" class="minute" type="number" form="data" placeholder="00">
+                                    <input v-model="minute" @focus="insertHourMetrika" maxlength="2" class="minute" type="number" form="data" placeholder="00">
                                 </div>
                             </div>
                             <div class="station__block">
                                 <label>Станция прибытия</label>    
-                                <input @focus="insertStationMetrika" class="station" type="text" form="data" placeholder="Ваша станция">
+                                <input v-model="station" @focus="insertStationMetrika" class="station" type="text" form="data" placeholder="Ваша станция">
                             </div>
                         </form>    
-                        <button @click="poehaloMetrika" type="submit" form="data" class="submit__btn">Поехали!</button> 
+                        <button @submit="generateObjectMessage" @click="poehaloMetrika" type="submit" form="data" class="submit__btn">Поехали!</button> 
                 </div>
             </div>
         </div>
@@ -42,6 +42,13 @@
 <script>
 import vLogo from '../common/v-logo.vue'
 
+let hours = ['С чувством, толком, расстановкой']
+let minutes = ['разгадывать кроссворд']
+let station = [
+    {A: 'в течение всего пути'},
+
+    ]
+
 export default {
     name: 'v-welcome',
         components: {
@@ -49,10 +56,19 @@ export default {
         },
         props: {},
         data () {
-            return {}        
+            return {
+                hour: '',
+                minute: '',
+                station: '',
+                message: ''
+            }        
         },    
         computed: {},
         methods: {
+            generateObjectMessage (event) {
+                event.preventDefault();
+                this.message.push('12');
+            },
             poehaloMetrika () {
                 this.$metrika.reachGoal('poehalo_button')
             },
@@ -77,7 +93,7 @@ export default {
         padding-top: 30px;
         @media (max-width: 767px) {
             background-color: #191919;
-            background-image: url(../../assets/images/background.png);
+            background-image: url(../../assets/images/background2.png);
             padding-top: 32px;
         }
     }
@@ -109,7 +125,7 @@ export default {
         background: #191919;
         border: 40px solid #000000;
         border-radius: 40px;
-        background-image: url(../../assets/images/background.png);
+        background-image: url(../../assets/images/background2.png);
         @media (max-width: 767px) {
             margin-top: 63px;
             margin-bottom: 0px;
@@ -135,9 +151,9 @@ export default {
             top: 270px;
         }
         @media (max-width: 767px) {
-            width: 40%;
-            height: 42%;
-            top: 25px;
+            width: 32%;
+            height: 32%;
+            top: 5px;
         }
     }
 
