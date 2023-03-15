@@ -44,7 +44,9 @@ export default {
     .v-card {
         position: relative;
         border-radius: 8px;
-        background-image: url(../../assets/images/background.png);
+        background-image: url(../../assets/images/background2.png);
+        background-position: center;
+        background-size: cover;
     }
 
     .card__image__hook {
@@ -95,11 +97,11 @@ export default {
         justify-content: flex-start;
         gap: 24px;
         padding-top: 120px;
-        margin-bottom: 55px;
+        padding-bottom: 55px;
         position: relative;
         @media (max-width: 767px) {
             padding-top: 80px;
-            margin-bottom: 55px;
+            padding-bottom: 55px;
             justify-content: space-between;
             align-items: center;
         }

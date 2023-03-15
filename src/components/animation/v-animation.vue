@@ -30,8 +30,6 @@ export default {
 
     .marquee {
         font-family: 'Press Start 2P';
-        font-style: normal;
-        font-weight: 400;
         font-size: 32px;
         line-height: 110%;
         /* or 35px */

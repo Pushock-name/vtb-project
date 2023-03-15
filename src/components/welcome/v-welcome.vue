@@ -187,7 +187,6 @@ export default {
         height: 69px;
         background: #0D0D0D;
         font-family: 'Press Start 2P';
-        font-style: normal;
         font-weight: 400;
         font-size: 26px;
         line-height: 110%;
@@ -203,7 +202,6 @@ export default {
     .delim {
         height: 45px;
         font-family: 'Press Start 2P';
-        font-style: normal;
         font-weight: 500;
         font-size: 27px;
         line-height: 250%;
@@ -225,8 +223,6 @@ export default {
         height: 69px;
         background: #0D0D0D;
         font-family: 'Press Start 2P';
-        font-style: normal;
-        font-weight: 400;
         font-size: 26px;
         line-height: 110%;
         text-transform: uppercase;
@@ -249,8 +245,6 @@ export default {
         height: 69px;
         background: #0D0D0D;
         font-family: 'Press Start 2P';
-        font-style: normal;
-        font-weight: 400;
         font-size: 26px;
         line-height: 110%;
         text-transform: uppercase;
@@ -263,13 +257,11 @@ export default {
     }
 
     .station::placeholder, .hour::placeholder, .minute::placeholder { 
-    color: #FFFFFF;
-    opacity: 1; 
+        color: #FFFFFF;
+        opacity: 1; 
     }
 
     .welcome-content__form label {
-        font-family: 'YS Text';
-        font-style: normal;
         font-weight: 500;
         font-size: 18px;
         line-height: 110%;
@@ -281,8 +273,6 @@ export default {
         height: 60px;
         background: linear-gradient(0deg, #F4F7FA, #F4F7FA), linear-gradient(90deg, #1437F5 0%, #3983F7 100%);
         border-radius: 8px;
-        font-family: 'YS Text';
-        font-style: normal;
         font-weight: 500;
         font-size: 18px;
         line-height: 30px;

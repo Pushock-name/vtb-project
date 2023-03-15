@@ -60,9 +60,6 @@ export default {
     }
 
     .footer__nav__link {
-        font-family: 'YS Text';
-        font-style: normal;
-        font-weight: 400;
         font-size: 16px;
         line-height: 30px;
         color: #FFFFFF;

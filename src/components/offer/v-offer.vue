@@ -25,7 +25,7 @@
                         от покупок.</p>
                     </div>
                 </div>
-                <a @click="cardIssueMetrika" href="https://www.vtb.promo/daily?code=media_rasp_yandex_dbdk&utm_source=rasp_yandex&utm_medium=media&utm_campaign=media_dbdk_rasp_yandex_link_button_issue_card_cpc_rf_p1_feb_apr"><div class="offer__card-issue__btn">Оформить</div></a>
+                <a class="offer__card-issue__btn" @click="cardIssueMetrika" href="https://www.vtb.promo/daily?code=media_rasp_yandex_dbdk&utm_source=rasp_yandex&utm_medium=media&utm_campaign=media_dbdk_rasp_yandex_link_button_issue_card_cpc_rf_p1_feb_apr">Оформить</a>
                 <div class="offer__card-issue__description">
                     Выпуск и обслуживание дебетовой карты — 0 ₽. 
                     Кешбэк – возврат части стоимости покупки в виде мультибонусов 
@@ -70,13 +70,16 @@ export default {
 <style lang="scss">
     .v-offer {
         background: #191919;
-        background-image: url(../../assets/images/background.png);
+        background-image: url(../../assets/images/background2.png);
+        background-position: center;
+        background-size: cover;
     }
 
     .offer {
         padding-top: 120px;
         padding-bottom: 120px;
         position: relative;
+        color: #FFFFFF;
         @media (max-width: 767px) {
             padding-top: 68px;
             padding-bottom: 80px;
@@ -201,29 +204,18 @@ export default {
         height: 60px;
         background: linear-gradient(90deg, #1437F5 0%, #3983F7 100%), #FFFFFF;
         border-radius: 10px;
-        font-family: 'YS Text';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 30px;
-        color: #FFFFFF;
         margin-bottom: 24px;
         margin-top: 40px;
     }
 
+
     .offer__card-issue__description {
-        font-family: 'YS Text';
-        font-style: normal;
-        font-weight: 400;
         font-size: 14px;
         line-height: 140%;
-        /* or 20px */
-        color: #FFFFFF;
         opacity: 0.5;
     }
 
     .offer__item__link {
         text-decoration: underline;
     }
-
 </style>
