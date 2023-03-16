@@ -28,11 +28,14 @@ export default {
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
 @font-face {
   font-family: 'YS Text';
-  src: url("./assets/fonts/YSText/YandexSansText-Regular.woff") format("woff");
+  src: url("./assets/fonts/YandexSansText-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Press Start 2P';
+  src: url("./assets/fonts/PressStart2P-Regular.woff") format("woff");
 }
 
 /* Reset and base styles */

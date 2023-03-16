@@ -4,7 +4,9 @@
             <div class="v-logo-container">
                 <v-logo class="welcome__logo"/>
             </div>
-            <div class="welcome">
+            <div class="welcome"> 
+                <v-modal-resolve v-if="showModalResolve" :wishMessage="wishMessage" @closeModalResolveWindow="closeModalResolveWindow" />
+                <v-modal-reject v-if="showModalReject" @closeModalRejectWindow="closeModalRejectWindow" />
                 <div class="train"><img src="../../assets/images/train.png" alt="train"></div>
                 <div class="welcome-content">
                     <div>
@@ -41,11 +43,15 @@
 
 <script>
 import vLogo from '../common/v-logo.vue'
+import vModalResolve from './modalResolve/v-modal-resolve.vue'
+import vModalReject from './modalReject/v-modal-reject.vue'
 
 export default {
     name: 'v-welcome',
         components: {
-            vLogo
+            vLogo,
+            vModalResolve, 
+            vModalReject
         },
         props: {},
         data () {
@@ -169,23 +175,30 @@ export default {
     "Э": "пока поезд стремится к остановке",
     "Ю": "пока за окном мелькают деревья"
 },
-                isModalResolve: false,
-                isModalReject: false
+                showModalResolve: false,
+                showModalReject: false
             }      
         },    
         computed: {
             wishMessage () {
-                return `${this.hourCompare()} ${this.minuteCompare()}  ${this.stationCompare()}`
+                return `${this.hourCompare()} ${this.minuteCompare()} ${this.stationCompare()}`
             }
         },
         methods: {
             onSubmit () {
                 this.wishMessage
                 this.poehaloMetrika()
-                // if
-                // this.showModalResolve()
-                // this.showModalReject()  
-                
+                if (!this.wishMessage.toUpperCase().includes('UNDEFINED')) {
+                    this.showModalResolve = true 
+                } else {
+                    this.showModalReject = true
+                } 
+            },
+            closeModalResolveWindow () {
+                this.showModalResolve = false
+            },
+            closeModalRejectWindow () {
+                this.showModalReject = false
             },
             hourCompare() {
                 return this.hours[this.hour]
@@ -208,10 +221,6 @@ export default {
             validationStation () {
                 this.station = this.station.replace(/[^а-яё\s]/gi, '')
             },
-            // showModalResolve() {
-            // },
-            // showModalReject () {
-            // }
             poehaloMetrika () {
                 this.$metrika.reachGoal('poehalo_button')
             },

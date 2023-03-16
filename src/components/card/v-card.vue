@@ -1,6 +1,7 @@
 <template lang="">
     <div class="v-card">
         <div class="container">
+            <!-- <v-card-modal-window /> -->
                 <div class="card__image__hook">
                     <div class="card__image"><img src="../../assets/images/cart.png" alt=""></div>
                     <div class="card">
@@ -29,9 +30,13 @@
     </div>
 </template>
 <script>
+// import vCardModalWindow from './cardModalWindow/v-card-modal-window.vue'; 
+
 export default {
     name: 'v-card',
-        components: {},
+        components: {
+            // vCardModalWindow
+        },
         props: {},
         data () {
             return {}        
@@ -174,5 +179,9 @@ export default {
         position: absolute;
         top: -30px;
         left: 50px;
+    }
+
+    .card__item__link:hover {
+        text-decoration: underline;
     }
 </style>
