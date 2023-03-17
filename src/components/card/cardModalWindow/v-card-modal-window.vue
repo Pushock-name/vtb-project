@@ -1,7 +1,7 @@
 <template lang="">
     <div class="container">
         <div class="v-card-modal-window">
-            <img class="v-card-modal-window__close" @click="closeCardModalWindow" src="../../../assets/images/close.png" alt="close">
+            <img class="v-card-modal-window__close" @click="onCloseCardModalWindow" src="../../../assets/images/close.png" alt="close">
             <p>Кешбэк начисляется мультибонусами, 
                 которые можно: конвертировать в рубли 
                 по курсу 1 мультибонус = 0,85 рублей или обменять на товары, 
@@ -16,8 +16,8 @@
 export default {
     name: 'v-card-modal-window',
     methods: {
-        closeCardModalWindow () {
-            this.$emit('closeCardModalWindow');
+        onCloseCardModalWindow () {
+            this.$emit('onCloseCardModalWindow');
         }
     }
 }
@@ -25,33 +25,40 @@ export default {
 
 <style lang="scss">
     .v-card-modal-window {
-        padding: 10px;
+        padding: 20px 10px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
         position: absolute;
-        top: 25%;
-        left: 25%;
+        top: 10%;
+        left: 2%;
         background: #0D0D0D;
         background-image: url(../../../assets/images/background.png);
         border-radius: 8px;
-        width: 50%;
+        width: 35%;
         z-index: 50;
+        @media (max-width: 1200px) {
+            width: 45%;
+            top: 8%;
+            left: 2%;
+        }
         @media (max-width: 992px) {
-            width: 75%;
-            top: 15%;
-            left: 13%;
+            width: 50%;
+            top: 10%;
+            left: 2%;
+            p {
+                font-size: 16px;
+            }
         }
         @media (max-width: 767px) {
             width: 100%;
-            top: 0%;
+            top: 30%;
             left: 0%;
         }
     }
 
     .v-card-modal-window__close {
-        width: 7.5%;
         margin-left: auto;
         padding: 10px;
         cursor: pointer;
@@ -60,9 +67,4 @@ export default {
         }
     }
 
-    .v-modal-reject p {
-        margin-top: 16px;
-        margin-bottom: 40px;
-        font-size: 14px;
-    }
 </style>

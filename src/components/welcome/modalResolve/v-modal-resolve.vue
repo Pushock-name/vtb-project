@@ -48,7 +48,6 @@ export default {
     }
 
     .v-modal-resolve__close {
-        width: 7.5%;
         margin-left: auto;
         padding: 10px;
         cursor: pointer;
@@ -58,8 +57,7 @@ export default {
     }
 
     .v-modal-resolve h2 {
-        margin-top: 28px;
-        font-size: 24px;
+        font-size: 20px;
         line-height: 110%;    
         text-shadow: 0px 0px 4px rgba(31, 107, 255, 0.35);
         color: #FFFFFF;
@@ -69,7 +67,7 @@ export default {
 
     .v-modal-resolve p {
         margin-top: 16px;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
         font-weight: 500;
         text-align: center;
     }

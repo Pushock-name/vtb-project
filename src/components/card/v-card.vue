@@ -1,9 +1,9 @@
 <template lang="">
     <div class="v-card">
         <div class="container">
-            <!-- <v-card-modal-window /> -->
                 <div class="card__image__hook">
-                    <div class="card__image"><img src="../../assets/images/cart.png" alt=""></div>
+                    <div class="card__image"><img src="../../assets/images/cart.png" alt="card"></div>
+                    <v-card-modal-window v-if="showCardModalWindow" @onCloseCardModalWindow="onCloseCardModalWindow"/>
                     <div class="card">
                         <div class="card__title">
                             <h2>Решения от ВТБ<br>
@@ -11,12 +11,12 @@
                         </div>
                         <div>
                             <h3>Карта ВТБ подойдёт для любых трат, будь то покупка<br> 
-                                билетов на электричку или любимого завтра кофе</h3>
+                                билетов на электричку или любимого кофе</h3>
                         </div>
                         <div class="card__image__mobile"><img src="../../assets/images/cardmobile.png" alt=""></div>
                         <div class="card__items">
-                            <div class="card__item"><span>-</span><p><a href="#" class="card__item__link">Кешбэк*</a> до 30% за покупки у партнёров банка</p></div>
-                            <div class="card__item"><span>-</span><p><a href="#" class="card__item__link">Кешбэк 2%*</a> в самых популярных категориях:<br>
+                            <div class="card__item"><span>-</span><p><button @click="onShowCardModalWindow" class="card__item__link">Кешбэк*</button> до 30% за покупки у партнёров банка</p></div>
+                            <div class="card__item"><span>-</span><p><button @click="onShowCardModalWindow" class="card__item__link">Кешбэк 2%*</button> в самых популярных категориях:<br>
                                 транспорт, супермаркеты и рестораны</p></div>
                             <div class="card__item"><span>-</span><p>Возможность переводить накопленный кешбэк в рубли,<br>
                                 тратить на путешествия или другие товары в программе<br>
@@ -30,19 +30,28 @@
     </div>
 </template>
 <script>
-// import vCardModalWindow from './cardModalWindow/v-card-modal-window.vue'; 
+import vCardModalWindow from './cardModalWindow/v-card-modal-window.vue'; 
 
 export default {
     name: 'v-card',
         components: {
-            // vCardModalWindow
+            vCardModalWindow
         },
         props: {},
         data () {
-            return {}        
+            return {
+                showCardModalWindow: false
+            }        
         },    
         computed: {},
-        methods: {},
+        methods: {
+            onShowCardModalWindow () {
+                this.showCardModalWindow = true
+            },
+            onCloseCardModalWindow () {
+                this.showCardModalWindow = false
+            }
+        },
 }
 </script>
 <style lang="scss">
@@ -82,19 +91,20 @@ export default {
     .card__image__mobile {
         position: relative;
         margin: 30px 0px;
+        @media (min-width: 1200px) {
+            display: none;
+        }
         @media (max-width: 1200px) {
             display: none;
         }
         @media (max-width: 992px) {
             display: none;
         }
-        @media (min-width: 767px) {
-            display: none;
-        }
         @media (max-width: 767px) {
             display: block;
         }
     }
+
 
     .card {
         display: flex;
@@ -169,8 +179,7 @@ export default {
         }
         @media (max-width: 992px) {
             content: url(../../assets/images/pearlmobile.png);
-            top: 60px;
-            left: 50px;
+            top: 60px; 
         }
     }
 
@@ -179,6 +188,10 @@ export default {
         position: absolute;
         top: -30px;
         left: 50px;
+    }
+
+    .card__item__link {
+        color: #FFFFFF;
     }
 
     .card__item__link:hover {

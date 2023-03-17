@@ -47,7 +47,6 @@ export default {
     }
 
     .v-modal-reject__close {
-        width: 7.5%;
         margin-left: auto;
         padding: 10px;
         cursor: pointer;
