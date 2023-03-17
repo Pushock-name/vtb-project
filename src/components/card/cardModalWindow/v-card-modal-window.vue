@@ -1,7 +1,7 @@
 <template lang="">
     <div class="container">
         <div class="v-card-modal-window">
-            <img class="v-card-modal-window__close" @click="onCloseCardModalWindow" src="../../../assets/images/close.png" alt="close">
+            <img class="v-card-modal-window__close" @click="onCloseCardModalWindow" src="../../../assets/images/close.svg" alt="close">
             <p>Кешбэк начисляется мультибонусами, 
                 которые можно: конвертировать в рубли 
                 по курсу 1 мультибонус = 0,85 рублей или обменять на товары, 

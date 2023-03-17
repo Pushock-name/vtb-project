@@ -5,17 +5,17 @@
                 <v-logo class="welcome__logo"/>
             </div>
             <div class="welcome"> 
-                <v-modal-resolve v-if="showModalResolve" :wishMessage="wishMessage" @closeModalResolveWindow="closeModalResolveWindow" />
-                <v-modal-reject v-if="showModalReject" @closeModalRejectWindow="closeModalRejectWindow" />
+                <v-modal-resolve v-if="showModalResolve" :wishMessage="wishMessage" :messages="messages" @closeModalResolveWindow="closeModalResolveWindow" />
+                <v-modal-reject v-if="showModalReject" :rejectMessage="rejectMessage" @closeModalRejectWindow="closeModalRejectWindow" />
                 <div class="train"><img src="../../assets/images/train.png" alt="train"></div>
                 <div class="welcome-content">
                     <div>
                         <h1>Необычные идеи<br>
                         для поездок</h1>
                     </div>
-                    <div><h3>Введите время отправления и укажите станцию<br> 
-                        прибытия. Мы подскажем, как сделать<br> 
-                        привычный путь веселее.</h3>
+                    <div><h3>Введите время отправления и укажите первую<br> 
+                        букву станции прибытия. Мы подскажем, <br> 
+                        как сделать привычный путь веселее.</h3>
                     </div>
                         <form class="welcome-content__form">
                             <div class="form__time__block">
@@ -30,8 +30,8 @@
                                 </div>
                             </div>
                             <div class="station__block">
-                                <label>Станция прибытия</label>    
-                                <input v-model="station" @focus="insertStationMetrika" class="station" type="text" maxlength="14" @input="validationStation" placeholder="Ваша станция">
+                                <label>Первая буква станции</label>    
+                                <input v-model="station" @focus="insertStationMetrika" class="station" type="text" maxlength="1" @input="validationStation" placeholder="Ваша станция">
                             </div>
                         </form>    
                         <button @click="onSubmit" class="submit__btn">Поехали!</button> 
@@ -59,6 +59,14 @@ export default {
                 hour: '',
                 minute: '',
                 station: '',
+                rejectMessage: '',
+                messages: [
+                    "И помнить, что с картой ВТБ каждый день вы можете получать кешбэк до 30% у партнёров банка.",
+                    "И помнить, что при оплате картой ВТБ можно ежедневно получать кешбэк 2% с оплаты поездок в траспорте, покупок в супермаркетах и походов в рестораны.",
+                    "И помнить, что обслуживание карты ВТБ — полностью бесплатное и без скрытых комиссий.",
+                    "И помнить, что с картой ВТБ каждый день можно совершать любые платежи и переводы без комиссии.",
+                    "И помнить, что с картой ВТБ можно совершать все важные платежи без комиссии.",
+                ],
                 hours: {
     "0": "С чувством, толком, расстановкой", 
     "1": "С огоньком в глазах",
@@ -197,25 +205,42 @@ export default {
     "Щ": "пока за окном дождь",
     "Э": "пока поезд стремится к остановке",
     "Ю": "пока за окном мелькают деревья",
-    "Я": "как будто уже дома"
+    "Я": "как будто уже дома",
+    "Ы": "error",
+    "Ь": "error",
+    "Ъ": "error"
 },
                 showModalResolve: false,
                 showModalReject: false
             }      
         },    
         computed: {
+            hourCompare() {
+                return this.hours[this.hour]
+            },
+            minuteCompare() {
+                return this.minutes[this.minute]
+            },
+            stationCompare() {
+                let str = this.station.toUpperCase()
+                return this.stations[str]
+            },
             wishMessage () {
-                return `${this.hourCompare()} ${this.minuteCompare()} ${this.stationCompare()}`
+                return `${this.hourCompare} ${this.minuteCompare} ${this.stationCompare}`
             }
         },
         methods: {
             onSubmit () {
                 this.wishMessage
                 this.poehaloMetrika()
-                if (!this.wishMessage.toUpperCase().includes('UNDEFINED')) {
-                    this.showModalResolve = true 
-                } else {
+                if (this.wishMessage.toUpperCase().includes('ERROR')) {
+                    this.rejectMessage = 'Станции на эту букву нет. Пожалуйста, попробуйте ещё раз.'
                     this.showModalReject = true
+                } else if (this.wishMessage.toUpperCase().includes('UNDEFINED')) {
+                    this.rejectMessage = 'Мы не нашли в списке пункта назначения на эту букву. Пожалуйста, попробуйте ещё раз.'
+                    this.showModalReject = true
+                } else {
+                    this.showModalResolve = true 
                 } 
             },
             closeModalResolveWindow () {
@@ -224,23 +249,11 @@ export default {
             closeModalRejectWindow () {
                 this.showModalReject = false
             },
-            hourCompare() {
-                return this.hours[this.hour]
-            },
-            minuteCompare() {
-                return this.minutes[this.minute]
-            },
-            stationCompare() {
-                let str = this.station.slice(0, 1).toUpperCase()
-                return this.stations[str]
-            },
             validationHour () {
                 this.hour = this.hour.replace( /[^\d]/g,' ')
             },
             validationMinute () {
                 this.minute = this.minute.replace( /[^\d]/g, ' ')
-                
-                
             },
             validationStation () {
                 this.station = this.station.replace(/[^а-яё\s]/gi, '')
@@ -327,9 +340,10 @@ export default {
             top: 270px;
         }
         @media (max-width: 767px) {
-            width: 32%;
-            height: 32%;
-            top: 5px;
+            right: -40px;
+            width: 42%;
+            height: 42%;
+            top: 10px;
         }
     }
 
@@ -341,17 +355,17 @@ export default {
         justify-content: flex-start;
         gap: 32px;
         padding-bottom: 43px;
+        h1 {
+            @media (max-width: 767px) {
+                font-size: 28px;
+            }
+        }   
         @media (max-width: 767px) {
             margin-top: 0px;
             margin-left: 0px;
         }
     }
 
-    .welcome-content h2 {
-        @media (max-width: 767px) {
-            font-size: 28px;
-        }
-    }
 
     .welcome-content__form {
         display: flex;
@@ -359,6 +373,13 @@ export default {
         justify-content: flex-start;
         flex-wrap: wrap;
         gap: 36px;
+        label {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 110%;
+            color: #006CFF;
+            margin-bottom: 8px;
+        }
     }
 
     .form__time__block {
@@ -451,13 +472,6 @@ export default {
     .station::placeholder, .hour::placeholder, .minute::placeholder { 
         color: #FFFFFF;
         opacity: 1; 
-    }
-
-    .welcome-content__form label {
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 110%;
-        color: #006CFF;
     }
 
     .submit__btn {

@@ -46,4 +46,5 @@
         line-height: 140%;
         overflow: hidden;
     }
+
 </style>

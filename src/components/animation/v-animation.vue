@@ -74,4 +74,5 @@ export default {
             transform: translate(-100%, 0)
         }
     }
+
 </style>

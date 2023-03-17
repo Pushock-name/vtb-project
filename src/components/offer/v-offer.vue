@@ -80,18 +80,15 @@ export default {
         padding-bottom: 120px;
         position: relative;
         color: #FFFFFF;
+        h2 {
+            @media (max-width: 767px) {
+                text-align: center;
+            }
+        }
         @media (max-width: 767px) {
             padding-top: 68px;
             padding-bottom: 80px;
         }
-
-    }
-
-    .offer h2 {
-        @media (max-width: 767px) {
-            text-align: center;
-        }
-
     }
 
     .offer__description {
@@ -107,38 +104,36 @@ export default {
         flex-direction: row;
         justify-content: space-between;
         flex-wrap: wrap;
+        span {
+            display: inline-block;
+            font-family: 'Press Start 2P';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 32px;
+            line-height: 130%;
+            color: #368CFF;
+            text-transform: uppercase;
+            margin-left: 10px;
+            margin-top: 20px;
+            @media (max-width: 992px) {
+                font-size: 24px;
+            }
+        }
+        p {
+            margin-left: 10px;
+            @media (max-width: 1200px) {
+                font-size: 16px;
+            }
+            @media (max-width: 992px) {
+                font-size: 13px;
+            }
+            @media (max-width: 767px) {
+                font-size: 16px;
+            }
+        }
         @media (max-width: 767px) {
             gap: 8px;
             margin-top: 224px;
-        }
-    }
-
-    .offer__items span {
-        display: inline-block;
-        font-family: 'Press Start 2P';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 32px;
-        line-height: 130%;
-        color: #368CFF;
-        text-transform: uppercase;
-        margin-left: 10px;
-        margin-top: 20px;
-        @media (max-width: 992px) {
-            font-size: 24px;
-        }
-    }
-
-    .offer__items p {
-        margin-left: 10px;
-        @media (max-width: 1200px) {
-            font-size: 16px;
-        }
-        @media (max-width: 992px) {
-            font-size: 13px;
-        }
-        @media (max-width: 767px) {
-            font-size: 16px;
         }
     }
 

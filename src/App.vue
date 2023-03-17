@@ -100,10 +100,6 @@ button::-moz-focus-inner {
   border: none;
 }
 
-label {
-  cursor: pointer;
-}
-
 legend {
   display: block;
 }

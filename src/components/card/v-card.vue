@@ -114,6 +114,11 @@ export default {
         padding-top: 120px;
         padding-bottom: 55px;
         position: relative;
+        h3 {
+            @media (max-width: 767px) {
+                text-align: center;
+            }
+        }
         @media (max-width: 767px) {
             padding-top: 80px;
             padding-bottom: 55px;
@@ -122,16 +127,12 @@ export default {
         }
     }
 
-    .card__title h2 {
-        color: #FFFFFF;
-        @media (max-width: 767px) {
-            text-align: center;
-        }
-    }
-
-    .card h3 {
-        @media (max-width: 767px) {
-            text-align: center;
+    .card__title {
+        h2 {
+            color: #FFFFFF;
+            @media (max-width: 767px) {
+                text-align: center;
+            }
         }
     }
 
@@ -146,26 +147,24 @@ export default {
         display: flex;
         flex-direction: row;
         gap: 16px;
-    }
-
-    .card__item p {
-        @media (max-width: 1200px) {
-            font-size: 16px;
+        span {
+            font-family: 'Press Start 2P';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 130%;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            text-shadow: 0px 0px 4px rgba(31, 107, 255, 0.35);
         }
-        @media (max-width: 992px) {
-            font-size: 13px;
+        p {
+            @media (max-width: 1200px) {
+                font-size: 16px;
+            }
+            @media (max-width: 992px) {
+                font-size: 13px;
+            }
         }
-    }
-
-    .card__item span {
-        font-family: 'Press Start 2P';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 24px;
-        line-height: 130%;
-        text-transform: uppercase;
-        color: #FFFFFF;
-        text-shadow: 0px 0px 4px rgba(31, 107, 255, 0.35);
     }
 
     .card__image::before {
