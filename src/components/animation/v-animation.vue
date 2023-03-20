@@ -1,78 +1,46 @@
 <template lang="">
     <div class="v-animation">
-        <span class="marquee">Кешбэк 2% на категорию Транспорт</span>
+        <marquee scrollamount="20" class="marquee">Кешбэк 2% на категорию Транспорт</marquee>
     </div>
 </template>
 <script>
 export default {
     name: 'v-animation',
-        components: {},
-        props: {},
-        data () {
-            return {}        
-        },    
-        computed: {},
-        methods: {},
-        watch: {}
+    components: {},
+    props: {},
+    data() {
+        return {}
+    },
+    computed: {},
+    methods: {},
+    watch: {}
 }
 </script>
+
 <style lang="scss">
-    .v-animation {
-        height: 82px;
-        background: #FFFFFF;
-        display: flex;
-        align-items: center;
-        overflow: hidden;   
-        @media (max-width: 767px) {
-            height: 52px;
-        }
-    }
+.v-animation {
+    height: 82px;
+    background: #FFFFFF;
+    text-align: center;
 
-    .marquee {
-        font-family: 'Press Start 2P';
-        font-size: 32px;
-        line-height: 110%;
-        /* or 35px */
-        text-align: center;
-        color: #006CFF;
-        white-space: nowrap;
-        display: inline-block;
-        padding-left: 100%;
-        -webkit-animation: scroll 8s infinite linear;
-        -moz-animation: scroll 8s infinite linear;
-        animation: scroll 8s infinite linear;
-        @media (max-width: 767px) {
-            font-size: 18px;
-        }
+    @media (max-width: 767px) {
+        height: 52px;
     }
-        @-webkit-keyframes scroll {
-        0% {
-            -webkit-transform: translate(0, 0);
-            transform: translate(0, 0);
-        }
-        100% {
-            -webkit-transform: translate(-50%, 0);
-            transform: translate(-50%, 0)
-        }
-    }
-    
-    @-moz-keyframes scroll {
-        0% {
-            -moz-transform: translate(0, 0);
-            transform: translate(0, 0);
-        }
-        100% {
-            -moz-transform: translate(-50%, 0);
-            transform: translate(-50%, 0)
-        }
-    }
-    @keyframes scroll {
-        0% {
-            transform: translate(0, 0);
-        }
-        100% {
-            transform: translate(-100%, 0)
-        }
-    }
+}
 
+.marquee {
+    margin-top: 26px;
+    font-family: 'Press Start 2P';
+    font-size: 32px;
+    line-height: 110%;
+    color: #006CFF;
+    white-space: nowrap;
+
+    @media (max-width: 767px) {
+        font-size: 18px;
+        margin-top: 16px;
+    }
+}
 </style>
+
+
